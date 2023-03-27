@@ -42,6 +42,8 @@ class Solution {
         int parkHight = park.length;
         char[][] parkChar = new char[parkHight][parkWidth];
         int[] answer = new int[2];
+        char op;
+        int n;
 
         for(int i=0; i<parkHight; i++){
             for(int j=0; j<parkWidth; j++){
@@ -54,8 +56,8 @@ class Solution {
         }
 
         for(int i=0; i<routes.length; i++){
-            char op = routes[i].charAt(0);
-            int n = Integer.parseInt(routes[i].substring(2));
+            op = routes[i].charAt(0);
+            n = Integer.parseInt(routes[i].substring(2));
             for(int j=0; j<n;j++){
                 answer = move(answer,op);
                 if(answer[0] < 0 || answer[0] >= parkHight || answer[1] < 0 ||
